@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import ComponentDidUpdate from './ComponentDidUpdate'
+import { UseCallBack } from './UseCallBack'
 
-function App() {
+export const App = () => {
+  const [name,setName]=  useState("asim")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>App
+      Name:
+      <input type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
+    <ComponentDidUpdate name={name} />
+    <UseCallBack />
+    {/* <button onClick={()=>setName("asgha ali")}>change name from app component</button> */}
     </div>
-  );
+  )
 }
-
-export default App;
